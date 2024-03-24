@@ -1,4 +1,4 @@
--- import my neovim settings and remaps
+-- import options and keymaps
 require("gus.options")
 require("gus.keymaps")
 
@@ -19,7 +19,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- import and install my plugins
+-- import and install plugins
 require("lazy").setup("gus.plugins")
 
 -- setup my editor's color scheme
@@ -27,7 +27,7 @@ vim.cmd([[colorscheme tokyonight-night]])
 -- vim.cmd([[colorscheme gruvbox]])
 -- vim.cmd([[colorscheme catppuccin]])
 
--- setup lsp keymap description for which-key
+-- setup lsp keymap description for `which-key` plugin
 local wk = require("which-key")
 
 wk.register({

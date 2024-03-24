@@ -8,18 +8,21 @@ key.set("n", "<leader>m", vim.cmd.Mason, { desc = "Go to Mason" })
 key.set("n", "<leader>e", vim.cmd.NvimTreeToggle, { desc = "Toggle explorer" })
 key.set("n", "<leader>/", vim.cmd.nohlsearch, { desc = "Clear search highlight" })
 key.set("n", "<leader>c", vim.cmd.CommentToggle, { desc = "Comment line" })
+
 key.set(
 	"v",
 	"<leader>cv",
 	":'<,'>CommentToggle<CR>",
 	{ noremap = true, silent = true, desc = "Comment selected lines" }
 )
+
 key.set(
 	"n",
 	"<leader>r",
 	":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
 	{ desc = "Replace word under cursor" }
 )
+
 key.set("x", "<leader>p", "'_dP", { desc = "Paste without losing the current word" })
 
 -- save file with ctrl+s
