@@ -1,6 +1,9 @@
 -- setup my mapleader
 vim.g.mapleader = " "
 
+-- setup neovim to use my system's clipboard
+vim.opt.clipboard:append("unnamedplus")
+
 -- enable line numbers and relative numbers
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -28,7 +31,7 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 -- keeps a minimum of 8 lines while scrolling
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 9
 
 -- activate sign column
 vim.opt.signcolumn = "yes"

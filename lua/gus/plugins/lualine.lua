@@ -8,7 +8,7 @@ return {
 				theme = "auto",
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
-				disabled_filetypes = { "packer", "NvimTree" },
+				disabled_filetypes = { "NvimTree" },
 			},
 			sections = {
 				lualine_a = {
