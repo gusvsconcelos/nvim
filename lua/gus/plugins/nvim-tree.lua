@@ -43,7 +43,7 @@ return {
 				highlight_opened_files = "none",
 
 				indent_markers = {
-					enable = true,
+					enable = false,
 				},
 
 				icons = {
@@ -68,13 +68,13 @@ return {
 							arrow_closed = "",
 						},
 						git = {
-							unstaged = "✗",
-							staged = "✓",
-							unmerged = "",
+							unstaged = "",
+							staged = "",
+							unmerged = "",
 							renamed = "➜",
 							untracked = "★",
 							deleted = "",
-							ignored = "◌",
+							ignored = "",
 						},
 					},
 				},

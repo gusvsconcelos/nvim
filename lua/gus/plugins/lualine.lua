@@ -12,7 +12,7 @@ return {
 			},
 			sections = {
 				lualine_a = {
-					{ "mode", icon = "" },
+					{ "mode", icon = "" },
 				},
 				lualine_b = {
 					"branch",
@@ -24,8 +24,8 @@ return {
 						symbols = {
 							modified = "●",
 							readonly = "󰷊",
-							unnamed = "[No name]",
-							newfile = "[New]",
+							unnamed = "󰇘",
+							newfile = "󱪝",
 						},
 					},
 				},
@@ -43,7 +43,7 @@ return {
 			},
 			inactive_sections = {
 				lualine_a = {
-					{ "mode", icon = "" },
+					{ "mode", icon = "" },
 				},
 				lualine_b = {
 					"branch",
@@ -55,8 +55,8 @@ return {
 						symbols = {
 							modified = "●",
 							readonly = "󰷊",
-							unnamed = "[No name]",
-							newfile = "[New]",
+							unnamed = "󰇘",
+							newfile = "󱪝",
 						},
 					},
 				},

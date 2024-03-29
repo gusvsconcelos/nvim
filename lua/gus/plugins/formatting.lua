@@ -11,7 +11,7 @@ return {
 				css = { "prettier" },
 				html = { "prettier" },
 				json = { "prettier" },
-				python = { "autopep8" },
+				python = { "autopep8", "isort" },
 				lua = { "stylua" },
 			},
 			format_on_save = {
