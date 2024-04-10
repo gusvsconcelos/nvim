@@ -30,8 +30,8 @@ vim.opt.incsearch = true
 -- enables 24-bit RGB colors on the TUI
 vim.opt.termguicolors = true
 
--- keeps a minimum of 8 lines while scrolling
-vim.opt.scrolloff = 9
+-- keeps a minimum of 10 lines while scrolling
+vim.opt.scrolloff = 10
 
 -- activate sign column
 vim.opt.signcolumn = "yes"
