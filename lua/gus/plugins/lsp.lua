@@ -101,7 +101,7 @@ return {
 				border = "rounded",
 				source = "always",
 				header = "",
-				prefix = "",
+				prefix = " ",
 			},
 			virtual_text = {
 				prefix = " ",
