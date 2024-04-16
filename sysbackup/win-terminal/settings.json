@@ -4,6 +4,13 @@
     "actions": 
     [
         {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            }
+        },
+        {
             "command": "unbound",
             "keys": "ctrl+v"
         },
@@ -42,13 +49,6 @@
         {
             "command": 
             {
-                "action": "copy",
-                "singleLine": false
-            }
-        },
-        {
-            "command": 
-            {
                 "action": "resizePane",
                 "direction": "up"
             },
@@ -58,8 +58,12 @@
             "command": "paste"
         },
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "down"
+            },
+            "keys": "shift+down"
         },
         {
             "command": 
@@ -70,6 +74,10 @@
             "keys": "shift+left"
         },
         {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+        {
             "command": 
             {
                 "action": "splitPane",
@@ -77,14 +85,6 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
-        },
-        {
-            "command": 
-            {
-                "action": "resizePane",
-                "direction": "down"
-            },
-            "keys": "shift+down"
         },
         {
             "command": 
@@ -120,9 +120,9 @@
             "experimental.retroTerminalEffect": false,
             "font": 
             {
-                "face": "JetBrainsMono Nerd Font",
+                "face": "CaskaydiaCove Nerd Font",
                 "size": 13.0,
-                "weight": "medium"
+                "weight": "normal"
             },
             "opacity": 100,
             "padding": "10",
@@ -140,6 +140,7 @@
             },
             {
                 "commandline": "\"C:\\Users\\gluiz\\AppData\\Local\\Microsoft\\WindowsApps\\Microsoft.PowerShell_8wekyb3d8bbwe\\pwsh.exe\" -nologo",
+                "compatibility.reloadEnvironmentVariables": true,
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
