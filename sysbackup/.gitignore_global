@@ -41,3 +41,7 @@ Thumbs.db
 .vs/
 .vscode/
 *.sln
+
+# Programming languages cache folders and files #
+########################
+__pycache__/
