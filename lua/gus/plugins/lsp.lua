@@ -87,7 +87,7 @@ return {
 			}),
 		})
 
-		local symbols = { Error = "󰅙", Info = "󰋼", Hint = "󰌵", Warn = "" }
+		local symbols = { Error = "󰅙", Info = "󰋼", Hint = "󰌵", Warn = "" }
 
 		for name, icon in pairs(symbols) do
 			local hl = "DiagnosticSign" .. name
