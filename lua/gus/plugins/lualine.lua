@@ -12,7 +12,7 @@ return {
 			},
 			sections = {
 				lualine_a = {
-					{ "mode", icon = "" },
+					{ "mode", icon = "" },
 				},
 				lualine_b = {
 					"branch",
@@ -43,7 +43,7 @@ return {
 			},
 			inactive_sections = {
 				lualine_a = {
-					{ "mode", icon = "" },
+					{ "mode", icon = "" },
 				},
 				lualine_b = {
 					"branch",

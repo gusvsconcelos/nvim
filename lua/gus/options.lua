@@ -16,8 +16,8 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
--- activate wrap
-vim.opt.wrap = true
+-- deactivate wrap
+vim.opt.wrap = false
 
 -- deactivate swapfile and backup
 vim.opt.swapfile = false
@@ -34,7 +34,7 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 10
 
 -- activate sign column
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "no"
 
 -- set updatetime to 50ms
 vim.opt.updatetime = 50
