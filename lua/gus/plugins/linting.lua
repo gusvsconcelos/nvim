@@ -8,7 +8,7 @@ return {
 		local lint = require("lint")
 
 		lint.linters_by_ft = {
-			python = { "pylint", "flake8" },
+			python = { "flake8", "mypy" },
 			javascript = { "eslint_d" },
 			typescript = { "eslint_d" },
 			html = { "htmlhint" },
