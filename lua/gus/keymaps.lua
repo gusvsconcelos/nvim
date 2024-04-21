@@ -8,7 +8,9 @@ key.set("n", "<leader>m", vim.cmd.Mason, { desc = "Go to Mason" })
 key.set("n", "<leader>e", vim.cmd.NvimTreeToggle, { desc = "Toggle explorer" })
 key.set("n", "<leader>/", vim.cmd.nohlsearch, { desc = "Clear search highlight" })
 key.set("n", "<leader>c", vim.cmd.CommentToggle, { desc = "Comment line" })
-
+key.set("n", "<leader>w", function()
+	vim.api.nvim_command("set wrap!")
+end, { desc = "Toggle World Wrap" })
 key.set(
 	"v",
 	"<leader>cv",
