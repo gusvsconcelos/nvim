@@ -27,6 +27,14 @@ key.set(
 	{ desc = "Replace word under cursor" }
 )
 
+-- Map a key to trigger the HTML template creation
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>ht",
+	"<cmd>lua Create_html_template()<CR>",
+	{ noremap = true, silent = true, desc = "Create HTML5 Template" }
+)
+
 key.set("x", "<leader>p", "'_dP", { desc = "Paste without losing the current word" })
 
 -- save file with ctrl+s
