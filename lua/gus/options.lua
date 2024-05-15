@@ -34,7 +34,7 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 10
 
 -- activate sign column
-vim.opt.signcolumn = "no"
+vim.opt.signcolumn = "yes"
 
 -- set updatetime to 50ms
 vim.opt.updatetime = 50
@@ -45,7 +45,7 @@ vim.opt.colorcolumn = "80"
 -- deactivate cursorline highlight
 vim.opt.cursorline = false
 
--- disable native status line
-vim.o.showmode = false
-vim.o.ruler = false
-vim.o.laststatus = 0
+-- -- disable native status line
+-- vim.o.showmode = false
+-- vim.o.ruler = false
+-- vim.o.laststatus = 0

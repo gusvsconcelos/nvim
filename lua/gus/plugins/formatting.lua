@@ -1,5 +1,5 @@
 return {
-	"stevearc/conform.nvim",
+	"tevearc/conform.nvim",
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local conform = require("conform")
