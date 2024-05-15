@@ -45,7 +45,7 @@ vim.opt.colorcolumn = "80"
 -- deactivate cursorline highlight
 vim.opt.cursorline = false
 
--- -- disable native status line
--- vim.o.showmode = false
--- vim.o.ruler = false
--- vim.o.laststatus = 0
+-- disable native status line
+vim.o.showmode = false
+vim.o.ruler = false
+vim.o.laststatus = 0
