@@ -1,4 +1,4 @@
--- import options and keymaps
+-- imort options and keymaps
 require("gus.options")
 require("gus.keymaps")
 require("gus.lazy")
