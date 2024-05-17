@@ -8,6 +8,9 @@ vim.opt.clipboard:append("unnamedplus")
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- hide fillchars
+vim.opt.fillchars = { eob = " " }
+
 -- better tabbing and indenting
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4

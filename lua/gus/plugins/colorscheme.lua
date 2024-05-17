@@ -1,4 +1,4 @@
 return {
 	{ "folke/tokyonight.nvim" },
-	{ "akinsho/horizon.nvim", version = "*" },
+	{ "akinsho/horizon.nvim" },
 }
