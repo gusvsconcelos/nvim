@@ -12,6 +12,7 @@ return {
 				json = { "prettier" },
 				python = { "autopep8", "isort" },
 				lua = { "stylua" },
+				c = { "clang-format" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
