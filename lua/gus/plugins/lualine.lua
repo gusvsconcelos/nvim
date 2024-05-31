@@ -10,10 +10,10 @@ return {
 		custom_tokyonight.replace.a.gui = "bold"
 		custom_tokyonight.command.a.gui = "bold"
 
-		custom_tokyonight.normal.c.bg = "#16161E"
-		custom_tokyonight.inactive.a.bg = "#16161E"
-		custom_tokyonight.inactive.b.bg = "#16161E"
-		custom_tokyonight.inactive.c.bg = "#16161E"
+		custom_tokyonight.normal.c.bg = "#16161E00"
+		custom_tokyonight.inactive.a.bg = "#16161E00"
+		custom_tokyonight.inactive.b.bg = "#16161E00"
+		custom_tokyonight.inactive.c.bg = "#16161E00"
 
 		require("lualine").setup({
 			options = {
