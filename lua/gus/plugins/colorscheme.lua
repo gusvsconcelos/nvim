@@ -1,3 +1,10 @@
 return {
-	{ "folke/tokyonight.nvim" },
+	{
+		"folke/tokyonight.nvim",
+		config = function()
+			require("tokyonight").setup({
+				transparent = true,
+			})
+		end,
+	},
 }
