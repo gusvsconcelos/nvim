@@ -2,20 +2,13 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		local custom_tokyonight = require("lualine.themes.tokyonight")
+		local custom_tokyonight = require("lualine.themes.tokyonight-night")
 
-		-- fix tokyonight lualine color scheme letters not using bold
 		custom_tokyonight.normal.a.gui = "bold"
 		custom_tokyonight.insert.a.gui = "bold"
 		custom_tokyonight.visual.a.gui = "bold"
 		custom_tokyonight.replace.a.gui = "bold"
 		custom_tokyonight.command.a.gui = "bold"
-
-		-- custom background color that match the tokyonight-night colorscheme better
-		custom_tokyonight.normal.c.bg = "#16161E"
-		custom_tokyonight.inactive.a.bg = "#16161E"
-		custom_tokyonight.inactive.b.bg = "#16161E"
-		custom_tokyonight.inactive.c.bg = "#16161E"
 
 		require("lualine").setup({
 
@@ -42,7 +35,7 @@ return {
 			},
 			inactive_sections = {
 				lualine_a = { { "mode", icon = "" } },
-				lualine_b = { "branch" },
+				lualine_b = {},
 				lualine_c = {
 					{
 						"filename",
@@ -50,8 +43,8 @@ return {
 						symbols = { modified = "●", readonly = "󰷊", unnamed = "󰇘", newfile = "󱪝" },
 					},
 				},
-				lualine_x = { "filetype", { "diagnostics", sources = { "nvim_diagnostic" } } },
-				lualine_y = { "location", "progress" },
+				lualine_x = { "filetype" },
+				lualine_y = {},
 				lualine_z = { { 'os.date("%H:%M")', icon = "" } },
 			},
 			tabline = {},
