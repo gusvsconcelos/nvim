@@ -1,24 +1,19 @@
 local key = vim.keymap
 
--- general shortcuts
+-- plugins utilities shortcuts
 key.set("n", "<leader>l", vim.cmd.Lazy, { desc = "Go to Lazy" })
 key.set("n", "<leader>m", vim.cmd.Mason, { desc = "Go to Mason" })
 
 -- general utilities
 key.set("n", "<leader>e", vim.cmd.NvimTreeToggle, { desc = "Toggle explorer" })
 key.set("n", "<leader>/", vim.cmd.nohlsearch, { desc = "Clear search highlight" })
-key.set("n", "<leader>c", vim.cmd.CommentToggle, { desc = "Comment line" })
+key.set("n", "<leader>c", vim.cmd.CommentToggle, { desc = "Toggle comment" })
 
 key.set("n", "<leader>w", function()
 	vim.api.nvim_command("set wrap!")
-end, { desc = "Toggle World Wrap" })
+end, { desc = "Toggle world wrap" })
 
-key.set(
-	"v",
-	"<leader>cv",
-	":'<,'>CommentToggle<CR>",
-	{ noremap = true, silent = true, desc = "Comment selected lines" }
-)
+key.set("v", "<leader>cv", ":'<,'>CommentToggle<CR>", { noremap = true, silent = true, desc = "Toggle comment" })
 
 key.set(
 	"n",
@@ -26,8 +21,6 @@ key.set(
 	":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
 	{ desc = "Replace word under cursor" }
 )
-
-key.set("x", "<leader>p", "'_dP", { desc = "Paste without losing the current word" })
 
 -- save file with ctrl+s
 key.set("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
@@ -38,10 +31,10 @@ key.set("v", "K", ":m '<-2<CR>gv=gv")
 key.set("v", "J", ":m '>+1<CR>gv=gv")
 
 key.set("n", "J", "mzJ`z") -- keeps cursor on place while applying line after line
-key.set("n", "<C-d>", "<C-d>zz") -- keeps cursor on the middle while jumping 'pages'
-key.set("n", "<C-u>", "<C-u>zz") -- keeps cursor on the middle while jumping 'pages'
-key.set("n", "n", "nzzzv") -- keeps cursor on the middle while searching
-key.set("n", "N", "Nzzzv") -- keeps cursor on the middle while searching
+key.set("n", "<C-d>", "<C-d>zz") -- keeps cursor on place while jumping 'pages' (down)
+key.set("n", "<C-u>", "<C-u>zz") -- keeps cursor on place while jumping 'pages' (up)
+key.set("n", "n", "nzzzv") -- keeps cursor on place while searching (next)
+key.set("n", "N", "Nzzzv") -- keeps cursor on place while searching (previous)
 
 -- window management
 key.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
@@ -148,5 +141,5 @@ end
 key.set("n", "<leader>ht", "<cmd>lua HTML5()<CR>", {
 	noremap = true,
 	silent = true,
-	desc = "Create HTML5 Template",
+	desc = "Create HTML5 template",
 })

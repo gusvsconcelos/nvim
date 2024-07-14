@@ -2,19 +2,18 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		local custom_tokyonight = require("lualine.themes.tokyonight-night")
+		local tokyo = require("lualine.themes.tokyonight-night")
 
-		custom_tokyonight.normal.a.gui = "bold"
-		custom_tokyonight.insert.a.gui = "bold"
-		custom_tokyonight.visual.a.gui = "bold"
-		custom_tokyonight.replace.a.gui = "bold"
-		custom_tokyonight.command.a.gui = "bold"
+		tokyo.normal.a.gui = "bold"
+		tokyo.insert.a.gui = "bold"
+		tokyo.visual.a.gui = "bold"
+		tokyo.replace.a.gui = "bold"
+		tokyo.command.a.gui = "bold"
 
 		require("lualine").setup({
-
 			options = {
 				icons_enabled = true,
-				theme = custom_tokyonight,
+				theme = tokyo,
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = { "NvimTree" },
