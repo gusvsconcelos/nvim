@@ -1,18 +1,18 @@
 -- setup mapleader
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 
 -- setup neovim to use system's clipboard
-vim.opt.clipboard:append("unnamedplus")
+vim.opt.clipboard:append('unnamedplus')
 
 -- enable line numbers and relative numbers
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
 -- activate sign column
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = 'yes'
 
 -- hide fillchars
-vim.opt.fillchars = { eob = " " }
+vim.opt.fillchars = { eob = ' ' }
 
 -- enables 24-bit RGB colors on the TUI
 vim.opt.termguicolors = true
@@ -45,7 +45,7 @@ vim.opt.updatetime = 50
 -- vim.opt.colorcolumn = "80"
 
 -- deactivate cursorline highlight
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 
 -- disable native status line
 vim.o.showmode = false

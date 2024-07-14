@@ -1,1 +1,1 @@
-require("gus")
+require('gus')
