@@ -7,8 +7,7 @@ return {
       rules = false,
     },
     layout = {
-      width = { min = 35 },
-      spacing = 6,
+      spacing = 8,
       align = 'center',
     },
     spec = {
