@@ -36,6 +36,7 @@ return {
         'tsserver',
         'html',
         'cssls',
+        'tailwindcss',
         'pyright',
       },
       handlers = {
