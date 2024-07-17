@@ -6,14 +6,24 @@ key.set('n', '<leader>m', vim.cmd.Mason, { desc = 'Go to Mason' })
 
 -- general utilities
 key.set('n', '<leader>e', vim.cmd.NvimTreeToggle, { desc = 'Toggle explorer' })
-key.set('n', '<leader>/', vim.cmd.nohlsearch, { desc = 'Clear search highlight' })
+key.set(
+  'n',
+  '<leader>/',
+  vim.cmd.nohlsearch,
+  { desc = 'Clear search highlight' }
+)
 key.set('n', '<leader>c', vim.cmd.CommentToggle, { desc = 'Toggle comment' })
 
 key.set('n', '<leader>w', function()
   vim.api.nvim_command('set wrap!')
 end, { desc = 'Toggle world wrap' })
 
-key.set('v', '<leader>cv', ':\'<,\'>CommentToggle<CR>', { noremap = true, silent = true, desc = 'Toggle comment' })
+key.set(
+  'v',
+  '<leader>cv',
+  ':\'<,\'>CommentToggle<CR>',
+  { noremap = true, silent = true, desc = 'Toggle comment' }
+)
 
 key.set(
   'n',
@@ -110,7 +120,8 @@ function HTML5()
 
   -- If the buffer is not empty, ask for confirmation to overwrite
   if #is_empty > 0 then
-    local confirm = vim.fn.confirm('Buffer is not empty. Overwrite?', '&Yes\n&No', 2)
+    local confirm =
+      vim.fn.confirm('Buffer is not empty. Overwrite?', '&Yes\n&No', 2)
     if confirm ~= 1 then
       return
     end
@@ -130,7 +141,13 @@ function HTML5()
 ]]
 
   -- Replace the content of the buffer with the HTML template
-  vim.api.nvim_buf_set_lines(current_buf, 0, -1, false, vim.split(template, '\n'))
+  vim.api.nvim_buf_set_lines(
+    current_buf,
+    0,
+    -1,
+    false,
+    vim.split(template, '\n')
+  )
 
   -- Set the file type as HTML
   vim.api.nvim_buf_set_option(current_buf, 'filetype', 'html')

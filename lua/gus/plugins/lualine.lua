@@ -26,10 +26,18 @@ return {
           {
             'filename',
             path = 0,
-            symbols = { modified = '●', readonly = '󰷊', unnamed = '󰇘', newfile = '󱪝' },
+            symbols = {
+              modified = '●',
+              readonly = '󰷊',
+              unnamed = '󰇘',
+              newfile = '󱪝',
+            },
           },
         },
-        lualine_x = { 'filetype', { 'diagnostics', sources = { 'nvim_diagnostic' } } },
+        lualine_x = {
+          'filetype',
+          { 'diagnostics', sources = { 'nvim_diagnostic' } },
+        },
         lualine_y = { 'location', 'progress' },
         lualine_z = { { 'os.date("%H:%M")', icon = '' } },
       },
@@ -40,7 +48,12 @@ return {
           {
             'filename',
             path = 0,
-            symbols = { modified = '●', readonly = '󰷊', unnamed = '󰇘', newfile = '󱪝' },
+            symbols = {
+              modified = '●',
+              readonly = '󰷊',
+              unnamed = '󰇘',
+              newfile = '󱪝',
+            },
           },
         },
         lualine_x = { 'filetype' },

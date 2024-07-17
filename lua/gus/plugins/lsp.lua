@@ -16,8 +16,12 @@ return {
   config = function()
     local cmp = require('cmp')
     local cmp_lsp = require('cmp_nvim_lsp')
-    local capabilities =
-      vim.tbl_deep_extend('force', {}, vim.lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
+    local capabilities = vim.tbl_deep_extend(
+      'force',
+      {},
+      vim.lsp.protocol.make_client_capabilities(),
+      cmp_lsp.default_capabilities()
+    )
 
     require('fidget').setup({})
     require('mason').setup({
@@ -53,7 +57,13 @@ return {
             settings = {
               Lua = {
                 diagnostics = {
-                  globals = { 'vim', 'it', 'describe', 'before_each', 'after_each' },
+                  globals = {
+                    'vim',
+                    'it',
+                    'describe',
+                    'before_each',
+                    'after_each',
+                  },
                 },
               },
             },
@@ -84,7 +94,8 @@ return {
       }),
     })
 
-    local symbols = { Error = '󰅙', Info = '󰋼', Hint = '󰌵', Warn = '' }
+    local symbols =
+      { Error = '󰅙', Info = '󰋼', Hint = '󰌵', Warn = '' }
 
     for name, icon in pairs(symbols) do
       local hl = 'DiagnosticSign' .. name

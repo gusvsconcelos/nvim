@@ -7,7 +7,7 @@ return {
       rules = false,
     },
     layout = {
-      spacing = 8,
+      spacing = 4,
       align = 'center',
     },
     spec = {
