@@ -7,8 +7,7 @@ return {
       rules = false,
     },
     layout = {
-      spacing = 4,
-      align = 'center',
+      spacing = 8,
     },
     spec = {
       -- LSP shortcuts descriptions
