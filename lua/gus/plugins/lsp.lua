@@ -42,7 +42,6 @@ return {
         'cssls',
         'tailwindcss',
         'pyright',
-        'gopls',
       },
       handlers = {
         function(server_name) -- default handler (optional)

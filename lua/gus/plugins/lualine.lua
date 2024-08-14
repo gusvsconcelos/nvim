@@ -16,7 +16,7 @@ return {
         theme = tokyo,
         component_separators = { left = '', right = '' },
         -- section_separators = { left = '', right = '' },
-        -- section_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
         disabled_filetypes = { 'NvimTree' },
       },
       sections = {
@@ -27,9 +27,8 @@ return {
             separator = { left = '', right = '' },
           },
         },
-        lualine_b = {},
+        lualine_b = { 'branch' },
         lualine_c = {
-          'branch',
           {
             'filename',
             path = 0,
@@ -44,10 +43,8 @@ return {
         lualine_x = {
           'filetype',
           { 'diagnostics', sources = { 'nvim_diagnostic' } },
-          -- 'location',
-          'progress',
         },
-        lualine_y = {},
+        lualine_y = { 'location', 'progress' },
         lualine_z = {
           {
             'os.date("%H:%M")',
