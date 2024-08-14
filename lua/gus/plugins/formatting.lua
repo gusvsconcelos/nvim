@@ -13,7 +13,7 @@ return {
         html = { 'prettier' },
         json = { 'prettier' },
         python = { 'autopep8', 'isort' },
-        go = { 'goimports' },
+        go = { 'goimports', 'golines' },
         lua = { 'stylua' },
       },
       format_on_save = {
