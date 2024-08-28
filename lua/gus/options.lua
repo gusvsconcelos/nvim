@@ -42,10 +42,10 @@ vim.opt.scrolloff = 10
 vim.opt.updatetime = 50
 
 -- indicate ideal line length limit at 80th column
-vim.opt.colorcolumn = '80'
+-- vim.opt.colorcolumn = '80'
 
 -- deactivate cursorline highlight
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 -- disable native status line
 vim.o.showmode = false
