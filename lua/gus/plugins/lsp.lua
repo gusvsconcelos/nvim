@@ -37,7 +37,7 @@ return {
       ensure_installed = {
         'lua_ls',
         'eslint',
-        'tsserver',
+        'ts_ls',
         'html',
         'cssls',
         'tailwindcss',
