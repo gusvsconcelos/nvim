@@ -15,8 +15,8 @@ return {
         icons_enabled = true,
         theme = tokyo,
         component_separators = { left = '', right = '' },
-        -- section_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
+        -- section_separators = { left = '', right = '' },
         disabled_filetypes = { 'NvimTree' },
       },
       sections = {
@@ -24,7 +24,7 @@ return {
           {
             'mode',
             icon = '',
-            separator = { left = '', right = '' },
+            -- separator = { left = '', right = '' },
           },
         },
         lualine_b = { 'branch' },
@@ -49,7 +49,7 @@ return {
           {
             'os.date("%H:%M")',
             icon = '',
-            separator = { right = '', left = '' },
+            -- separator = { right = '', left = '' },
           },
         },
       },
