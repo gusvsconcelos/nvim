@@ -51,3 +51,6 @@ vim.opt.cursorline = false
 vim.o.showmode = false
 vim.o.ruler = false
 vim.o.laststatus = 0
+
+-- disable background on nord colorscheme
+vim.g.nord_disable_background = true

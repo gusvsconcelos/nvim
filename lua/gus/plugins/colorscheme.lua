@@ -17,4 +17,8 @@ return {
       })
     end,
   },
+  {
+    'shaunsingh/nord.nvim',
+    priority = 1000,
+  },
 }
