@@ -15,13 +15,6 @@ return {
 
   config = function()
     local cmp = require('cmp')
-    local cmp_lsp = require('cmp_nvim_lsp')
-    local capabilities = vim.tbl_deep_extend(
-      'force',
-      {},
-      vim.lsp.protocol.make_client_capabilities(),
-      cmp_lsp.default_capabilities()
-    )
 
     require('fidget').setup({})
     require('mason').setup({
@@ -43,32 +36,15 @@ return {
         'tailwindcss',
         'pyright',
       },
-      handlers = {
-        function(server_name) -- default handler (optional)
-          require('lspconfig')[server_name].setup({
-            capabilities = capabilities,
-          })
-        end,
+    })
 
-        ['lua_ls'] = function()
-          local lspconfig = require('lspconfig')
-          lspconfig.lua_ls.setup({
-            capabilities = capabilities,
-            settings = {
-              Lua = {
-                diagnostics = {
-                  globals = {
-                    'vim',
-                    'it',
-                    'describe',
-                    'before_each',
-                    'after_each',
-                  },
-                },
-              },
-            },
-          })
-        end,
+    vim.lsp.config('lua_ls', {
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { 'vim' },
+          },
+        },
       },
     })
 
@@ -94,15 +70,28 @@ return {
       }),
     })
 
-    local symbols =
-      { Error = '󰅙', Info = '󰋼', Hint = '󰌵', Warn = '' }
-
-    for name, icon in pairs(symbols) do
-      local hl = 'DiagnosticSign' .. name
-      vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
-    end
-
     vim.diagnostic.config({
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = '󰅙',
+          [vim.diagnostic.severity.INFO] = '󰋼',
+          [vim.diagnostic.severity.HINT] = '󰌵',
+          [vim.diagnostic.severity.WARN] = '',
+        },
+        linehl = {
+          [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+          [vim.diagnostic.severity.INFO] = 'InfoMsg',
+          [vim.diagnostic.severity.HINT] = 'HintMsg',
+          [vim.diagnostic.severity.WARN] = 'WarnMsg',
+        },
+        numhl = {
+          [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+          [vim.diagnostic.severity.INFO] = 'InfoMsg',
+          [vim.diagnostic.severity.HINT] = 'HintMsg',
+          [vim.diagnostic.severity.WARN] = 'WarnMsg',
+        },
+      },
+
       float = {
         focusable = true,
         style = 'minimal',
@@ -111,6 +100,7 @@ return {
         header = '',
         prefix = '',
       },
+
       virtual_text = {
         prefix = '',
       },
