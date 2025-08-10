@@ -35,7 +35,7 @@ return {
         },
         lualine_x = { { 'diagnostics', sources = { 'nvim_diagnostic' } }, 'filetype' },
         lualine_y = {},
-        lualine_z = { { 'os.date("%H:%M")', icon = '' } },
+        lualine_z = {},
       },
 
       inactive_sections = {
@@ -55,7 +55,7 @@ return {
         },
         lualine_x = { { 'diagnostics', sources = { 'nvim_diagnostic' } }, 'filetype' },
         lualine_y = {},
-        lualine_z = { { 'os.date("%H:%M")', icon = '' } },
+        lualine_z = {},
       },
       tabline = {},
       extensions = {},
