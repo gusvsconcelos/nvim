@@ -1,14 +1,18 @@
 return {
   'folke/which-key.nvim',
+
   event = 'VeryLazy',
+
   opts = {
     icons = {
       separator = '󰌌',
       rules = false,
     },
+
     layout = {
       spacing = 8,
     },
+
     spec = {
       -- LSP shortcuts descriptions
       { '<C-h>', desc = 'Show signature help' },
@@ -22,12 +26,12 @@ return {
       { 'gd', desc = 'Go to definition' },
     },
   },
+
   keys = {
     {
       '<leader>?',
-      function()
-        require('which-key').show({ global = false })
-      end,
+      function() require('which-key').show({ global = false }) end,
+
       desc = 'Buffer Local Keymaps (which-key)',
     },
   },

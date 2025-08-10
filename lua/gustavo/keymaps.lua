@@ -6,24 +6,12 @@ key.set('n', '<leader>m', vim.cmd.Mason, { desc = 'Go to Mason' })
 
 -- general utilities
 key.set('n', '<leader>e', vim.cmd.NvimTreeToggle, { desc = 'Toggle explorer' })
-key.set(
-  'n',
-  '<leader>/',
-  vim.cmd.nohlsearch,
-  { desc = 'Clear search highlight' }
-)
+key.set('n', '<leader>/', vim.cmd.nohlsearch, { desc = 'Clear search highlight' })
 key.set('n', '<leader>c', vim.cmd.CommentToggle, { desc = 'Toggle comment' })
 
-key.set('n', '<leader>w', function()
-  vim.api.nvim_command('set wrap!')
-end, { desc = 'Toggle world wrap' })
+key.set('n', '<leader>w', function() vim.api.nvim_command('set wrap!') end, { desc = 'Toggle world wrap' })
 
-key.set(
-  'v',
-  '<leader>cv',
-  ':\'<,\'>CommentToggle<CR>',
-  { noremap = true, silent = true, desc = 'Toggle comment' }
-)
+key.set('v', '<leader>cv', ':\'<,\'>CommentToggle<CR>', { noremap = true, silent = true, desc = 'Toggle comment' })
 
 key.set(
   'n',
@@ -53,36 +41,16 @@ key.set('n', '<leader>se', '<C-w>=', { desc = 'Make splits equal size' })
 key.set('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close current split' })
 
 -- lsp keymaps
-key.set('n', 'gd', function()
-  vim.lsp.buf.definition()
-end)
-key.set('n', 'K', function()
-  vim.lsp.buf.hover()
-end)
-key.set('n', '[d', function()
-  vim.diagnostic.goto_next()
-end)
-key.set('n', ']d', function()
-  vim.diagnostic.goto_prev()
-end)
-key.set('n', '<leader>vd', function()
-  vim.diagnostic.open_float()
-end)
-key.set('n', '<leader>vws', function()
-  vim.lsp.buf.workspace_symbol()
-end)
-key.set('n', '<leader>vca', function()
-  vim.lsp.buf.code_action()
-end)
-key.set('n', '<leader>vrr', function()
-  vim.lsp.buf.references()
-end)
-key.set('n', '<leader>vrn', function()
-  vim.lsp.buf.rename()
-end)
-key.set('i', '<C-h>', function()
-  vim.lsp.buf.signature_help()
-end)
+key.set('n', 'gd', function() vim.lsp.buf.definition() end)
+key.set('n', 'K', function() vim.lsp.buf.hover() end)
+key.set('n', '[d', function() vim.diagnostic.goto_next() end)
+key.set('n', ']d', function() vim.diagnostic.goto_prev() end)
+key.set('n', '<leader>vd', function() vim.diagnostic.open_float() end)
+key.set('n', '<leader>vws', function() vim.lsp.buf.workspace_symbol() end)
+key.set('n', '<leader>vca', function() vim.lsp.buf.code_action() end)
+key.set('n', '<leader>vrr', function() vim.lsp.buf.references() end)
+key.set('n', '<leader>vrn', function() vim.lsp.buf.rename() end)
+key.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end)
 
 -- Toggle LSP diagnostics
 local function hide_diagnostics()
@@ -120,11 +88,8 @@ function HTML5()
 
   -- If the buffer is not empty, ask for confirmation to overwrite
   if #is_empty > 0 then
-    local confirm =
-      vim.fn.confirm('Buffer is not empty. Overwrite?', '&Yes\n&No', 2)
-    if confirm ~= 1 then
-      return
-    end
+    local confirm = vim.fn.confirm('Buffer is not empty. Overwrite?', '&Yes\n&No', 2)
+    if confirm ~= 1 then return end
   end
 
   -- Set the HTML template content
@@ -141,13 +106,7 @@ function HTML5()
 ]]
 
   -- Replace the content of the buffer with the HTML template
-  vim.api.nvim_buf_set_lines(
-    current_buf,
-    0,
-    -1,
-    false,
-    vim.split(template, '\n')
-  )
+  vim.api.nvim_buf_set_lines(current_buf, 0, -1, false, vim.split(template, '\n'))
 
   -- Set the file type as HTML
   vim.api.nvim_buf_set_option(current_buf, 'filetype', 'html')
