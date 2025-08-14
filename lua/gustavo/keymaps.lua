@@ -5,20 +5,31 @@ key.set('n', '<leader>l', vim.cmd.Lazy, { desc = 'Go to Lazy' })
 key.set('n', '<leader>m', vim.cmd.Mason, { desc = 'Go to Mason' })
 
 -- general utilities
-key.set('n', '<leader>e', vim.cmd.NvimTreeToggle, { desc = 'Toggle explorer' })
-key.set('n', '<leader>/', vim.cmd.nohlsearch, { desc = 'Clear search highlight' })
-key.set('n', '<leader>c', vim.cmd.CommentToggle, { desc = 'Toggle comment' })
+key.set('n', '<leader>x', vim.cmd.NvimTreeToggle, { desc = 'Toggle explorer' })
 
-key.set('n', '<leader>w', function() vim.api.nvim_command('set wrap!') end, { desc = 'Toggle world wrap' })
+key.set('n', '<leader>e', function()
+  local view = require('nvim-tree.view')
+  local api = require('nvim-tree.api')
+  local cur_win = vim.api.nvim_get_current_win()
 
-key.set('v', '<leader>cv', ':\'<,\'>CommentToggle<CR>', { noremap = true, silent = true, desc = 'Toggle comment' })
-
-key.set(
-  'n',
-  '<leader>r',
-  ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',
-  { desc = 'Replace word under cursor' }
-)
+  if view.is_visible() then
+    local tree_win = view.get_winnr()
+    if tree_win > 0 then
+      if cur_win == tree_win then
+        for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+          if win ~= tree_win then
+            vim.api.nvim_set_current_win(win)
+            break
+          end
+        end
+      else
+        vim.api.nvim_set_current_win(tree_win)
+      end
+    end
+  else
+    api.tree.toggle()
+  end
+end, { noremap = true, silent = true, desc = 'Focus explorer' })
 
 -- save file with ctrl+s
 key.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })

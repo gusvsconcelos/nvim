@@ -6,6 +6,7 @@ return {
     vim.g.loaded_netrwPlugin = 1
     vim.g.nvim_tree_delete_cmd = 'del'
     vim.g.nvim_tree_trash = { 'trash-put' }
+    vim.o.laststatus = 3
 
     require('nvim-tree').setup({
       filters = {
