@@ -31,6 +31,20 @@ key.set('n', '<leader>e', function()
   end
 end, { noremap = true, silent = true, desc = 'Focus explorer' })
 
+key.set('n', '<leader>/', vim.cmd.nohlsearch, { desc = 'Clear search highlight' })
+key.set('n', '<leader>c', vim.cmd.CommentToggle, { desc = 'Toggle comment' })
+
+key.set('n', '<leader>w', function() vim.api.nvim_command('set wrap!') end, { desc = 'Toggle world wrap' })
+
+key.set('v', '<leader>cv', ':\'<,\'>CommentToggle<CR>', { noremap = true, silent = true, desc = 'Toggle comment' })
+
+key.set(
+  'n',
+  '<leader>r',
+  ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',
+  { desc = 'Replace word under cursor' }
+)
+
 -- save file with ctrl+s
 key.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
 key.set('i', '<C-s>', '<Esc>:w<CR>', { noremap = true, silent = true })
