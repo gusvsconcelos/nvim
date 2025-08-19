@@ -5,6 +5,7 @@ return {
 
   config = function()
     local function mode() return [[]] end
+    -- local function node() return [[ ]] end
 
     require('lualine').setup({
       options = {
@@ -34,8 +35,8 @@ return {
             },
           },
         },
-        lualine_x = { { 'diagnostics', sources = { 'nvim_diagnostic' } }, 'filetype' },
-        lualine_y = {},
+        lualine_x = { { 'diagnostics', sources = { 'nvim_diagnostic' } } },
+        lualine_y = { 'filetype' },
         lualine_z = {},
       },
 
