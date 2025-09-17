@@ -51,3 +51,6 @@ vim.opt.cursorline = false
 vim.o.showmode = false
 vim.o.ruler = false
 vim.o.laststatus = 0
+
+-- enable mousemoveevent
+vim.opt.mousemoveevent = true

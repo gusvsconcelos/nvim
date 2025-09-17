@@ -1,11 +1,8 @@
 return {
   'nvim-lualine/lualine.nvim',
-
   dependencies = { 'nvim-tree/nvim-web-devicons' },
 
   config = function()
-    local function mode() return [[]] end
-
     require('lualine').setup({
       options = {
         icons_enabled = true,
@@ -20,41 +17,24 @@ return {
       },
 
       sections = {
-        lualine_a = { mode },
-        lualine_b = { 'branch' },
-        lualine_c = {
+        lualine_a = { { 'mode', icon = '' } },
+        lualine_b = {
           {
             'filename',
             path = 0,
-            symbols = {
-              modified = '●',
-              readonly = '󰷊',
-              unnamed = '󰇘',
-              newfile = '󱪝',
-            },
+            symbols = { modified = '●', readonly = '󰷊', unnamed = '󰇘', newfile = '󱪝' },
           },
         },
+        lualine_c = { 'branch', 'diff' },
         lualine_x = { { 'diagnostics', sources = { 'nvim_diagnostic' } }, 'filetype' },
         lualine_y = {},
         lualine_z = {},
       },
-
       inactive_sections = {
-        lualine_a = { mode },
+        lualine_a = {},
         lualine_b = {},
-        lualine_c = {
-          {
-            'filename',
-            path = 0,
-            symbols = {
-              modified = '●',
-              readonly = '󰷊',
-              unnamed = '󰇘',
-              newfile = '󱪝',
-            },
-          },
-        },
-        lualine_x = { { 'diagnostics', sources = { 'nvim_diagnostic' } }, 'filetype' },
+        lualine_c = {},
+        lualine_x = {},
         lualine_y = {},
         lualine_z = {},
       },

@@ -45,6 +45,18 @@ key.set(
   { desc = 'Replace word under cursor' }
 )
 
+-- bufferline shortcuts
+key.set('n', '<leader>bp', '<Cmd>BufferLineTogglePin<CR>', { desc = 'Toggle Pin' })
+key.set('n', '<leader>bP', '<Cmd>BufferLineGroupClose ungrouped<CR>', { desc = 'Delete Non-Pinned Buffers' })
+key.set('n', '<leader>br', '<Cmd>BufferLineCloseRight<CR>', { desc = 'Delete Buffers to the Right' })
+key.set('n', '<leader>bl', '<Cmd>BufferLineCloseLeft<CR>', { desc = 'Delete Buffers to the Left' })
+key.set('n', '<S-h>', '<Cmd>BufferLineCyclePrev<CR>', { desc = 'Prev Buffer' })
+key.set('n', '<S-l>', '<Cmd>BufferLineCycleNext<CR>', { desc = 'Next Buffer' })
+key.set('n', '[b', '<Cmd>BufferLineCyclePrev<CR>', { desc = 'Prev Buffer' })
+key.set('n', ']b', '<Cmd>BufferLineCycleNext<CR>', { desc = 'Next Buffer' })
+key.set('n', '[B', '<Cmd>BufferLineMovePrev<CR>', { desc = 'Move buffer prev' })
+key.set('n', ']B', '<Cmd>BufferLineMoveNext<CR>', { desc = 'Move buffer next' })
+
 -- save file with ctrl+s
 key.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
 key.set('i', '<C-s>', '<Esc>:w<CR>', { noremap = true, silent = true })
