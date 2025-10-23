@@ -1,38 +1,30 @@
 return {
   'folke/which-key.nvim',
-
   event = 'VeryLazy',
-
-  opts = {
-    icons = {
-      separator = '󰌌',
-      rules = false,
-    },
-
-    layout = {
-      spacing = 8,
-    },
-
-    spec = {
-      -- LSP shortcuts descriptions
-      { '<C-h>', desc = 'Show signature help' },
-      { '<leader>vca', desc = 'Show code actions' },
-      { '<leader>vd', desc = 'Open diagnostic float window' },
-      { '<leader>vrn', desc = 'Rename symbols' },
-      { '<leader>vrr', desc = 'Show symbols references' },
-      { '<leader>vws', desc = 'Search symbols on workspace' },
-      { '[d', desc = 'Go to next diagnostic' },
-      { ']d', desc = 'Go to previous diagnostic' },
+  config = function()
+    require('which-key').setup({
+      icons = {
+        separator = '󰌌',
+        rules = false,
+      },
+      layout = {
+        spacing = 8,
+      },
+    })
+    require('which-key').add({
+      { '<leader>d', group = 'Diagnostics' },
+      { '<leader>e', group = 'Explorer' },
+      { '<leader>h', group = 'Templates' },
+      { '<leader>l', group = 'LSP' },
+      { '<leader>p', group = 'Plugins' },
+      { '<leader>t', group = 'Telescope' },
+      { '<leader>u', group = 'Utilities' },
+      { '<leader>w', group = 'Windows' },
+      { '<C-h>', desc = 'Signature help' },
+      { '[d', desc = 'Next diagnostic' },
+      { ']d', desc = 'Previous diagnostic' },
       { 'gd', desc = 'Go to definition' },
-    },
-  },
-
-  keys = {
-    {
-      '<leader>?',
-      function() require('which-key').show({ global = false }) end,
-
-      desc = 'Buffer Local Keymaps (which-key)',
-    },
-  },
+      { '<leader>?', function() require('which-key').show({ global = false }) end, desc = 'Buffer keymaps' },
+    })
+  end,
 }

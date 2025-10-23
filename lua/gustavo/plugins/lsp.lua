@@ -1,6 +1,5 @@
 return {
   'neovim/nvim-lspconfig',
-
   dependencies = {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
@@ -13,11 +12,8 @@ return {
     'saadparwaiz1/cmp_luasnip',
     'j-hui/fidget.nvim',
   },
-
   config = function()
-    local cmp = require('cmp')
-
-    require('fidget').setup({})
+    -- Mason setup
     require('mason').setup({
       ui = {
         icons = {
@@ -37,35 +33,40 @@ return {
         'tailwindcss',
         'pyright',
       },
+      automatic_installation = true,
     })
 
-    vim.lsp.config('lua_ls', {
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { 'vim' },
-          },
-        },
-      },
-    })
+    -- LSP config
+    local servers = { 'lua_ls', 'eslint', 'ts_ls', 'html', 'cssls', 'tailwindcss', 'pyright' }
+    for _, server in ipairs(servers) do
+      local opts = server == 'lua_ls'
+          and {
+            settings = {
+              Lua = {
+                diagnostics = { globals = { 'vim' } },
+              },
+            },
+          }
+        or {}
+      vim.lsp.config(server, opts)
+    end
 
-    local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
+    -- Completion setup
+    local cmp = require('cmp')
     cmp.setup({
       snippet = {
         expand = function(args) require('luasnip').lsp_expand(args.body) end,
       },
-
       mapping = cmp.mapping.preset.insert({
-        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+        ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+        ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
         ['<C-y>'] = cmp.mapping.confirm({ select = true }),
         ['<C-Space>'] = cmp.mapping.complete(),
       }),
-
       sources = cmp.config.sources({ { name = 'nvim_lsp' }, { name = 'luasnip' } }, { { name = 'buffer' } }),
     })
 
+    -- Diagnostics setup
     vim.diagnostic.config({
       signs = {
         text = {
@@ -87,7 +88,6 @@ return {
           [vim.diagnostic.severity.WARN] = 'WarnMsg',
         },
       },
-
       float = {
         focusable = true,
         style = 'minimal',
@@ -96,10 +96,10 @@ return {
         header = '',
         prefix = '',
       },
-
-      virtual_text = {
-        prefix = '',
-      },
+      virtual_text = { prefix = '' },
     })
+
+    -- Fidget setup
+    require('fidget').setup({})
   end,
 }
