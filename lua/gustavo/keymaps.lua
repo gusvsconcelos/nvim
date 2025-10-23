@@ -32,11 +32,14 @@ key.set('n', '<leader>e', function()
 end, { noremap = true, silent = true, desc = 'Focus explorer' })
 
 key.set('n', '<leader>/', vim.cmd.nohlsearch, { desc = 'Clear search highlight' })
+
+-- Toggle comment (line/block)
 key.set('n', '<leader>c', vim.cmd.CommentToggle, { desc = 'Toggle comment' })
-
-key.set('n', '<leader>w', function() vim.api.nvim_command('set wrap!') end, { desc = 'Toggle world wrap' })
-
 key.set('v', '<leader>cv', ':\'<,\'>CommentToggle<CR>', { noremap = true, silent = true, desc = 'Toggle comment' })
+
+-- Toggle markdown preview
+key.set('n', '<leader>pm', function() vim.api.nvim_command('Markview toggle') end, { desc = 'Toggle markdown preview' })
+key.set('n', '<leader>w', function() vim.api.nvim_command('set wrap!') end, { desc = 'Toggle world wrap' })
 
 key.set(
   'n',
@@ -44,18 +47,6 @@ key.set(
   ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',
   { desc = 'Replace word under cursor' }
 )
-
--- bufferline shortcuts
-key.set('n', '<leader>bp', '<Cmd>BufferLineTogglePin<CR>', { desc = 'Toggle Pin' })
-key.set('n', '<leader>bP', '<Cmd>BufferLineGroupClose ungrouped<CR>', { desc = 'Delete Non-Pinned Buffers' })
-key.set('n', '<leader>br', '<Cmd>BufferLineCloseRight<CR>', { desc = 'Delete Buffers to the Right' })
-key.set('n', '<leader>bl', '<Cmd>BufferLineCloseLeft<CR>', { desc = 'Delete Buffers to the Left' })
-key.set('n', '<S-h>', '<Cmd>BufferLineCyclePrev<CR>', { desc = 'Prev Buffer' })
-key.set('n', '<S-l>', '<Cmd>BufferLineCycleNext<CR>', { desc = 'Next Buffer' })
-key.set('n', '[b', '<Cmd>BufferLineCyclePrev<CR>', { desc = 'Prev Buffer' })
-key.set('n', ']b', '<Cmd>BufferLineCycleNext<CR>', { desc = 'Next Buffer' })
-key.set('n', '[B', '<Cmd>BufferLineMovePrev<CR>', { desc = 'Move buffer prev' })
-key.set('n', ']B', '<Cmd>BufferLineMoveNext<CR>', { desc = 'Move buffer next' })
 
 -- save file with ctrl+s
 key.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
