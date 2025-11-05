@@ -6,6 +6,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
 vim.opt.fillchars = { eob = ' ' }
+vim.opt.fillchars:append({ vert = ' ' })
 vim.opt.termguicolors = true
 vim.opt.cursorline = false
 vim.opt.scrolloff = 10
