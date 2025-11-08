@@ -32,12 +32,13 @@ return {
         'cssls',
         'tailwindcss',
         'pyright',
+        'intelephense',
       },
       automatic_installation = true,
     })
 
     -- LSP config
-    local servers = { 'lua_ls', 'eslint', 'ts_ls', 'html', 'cssls', 'tailwindcss', 'pyright' }
+    local servers = { 'lua_ls', 'eslint', 'ts_ls', 'html', 'cssls', 'tailwindcss', 'pyright', 'intelephense' }
     for _, server in ipairs(servers) do
       local opts = server == 'lua_ls'
           and {
