@@ -9,7 +9,7 @@ return {
           '',
         },
         indicator = {
-          icon = '┃',
+          style = 'none',
         },
         hover = {
           enabled = true,

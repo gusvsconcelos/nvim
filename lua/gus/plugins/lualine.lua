@@ -7,11 +7,11 @@ return {
         icons_enabled = true,
         theme = 'auto',
         component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
         globalstatus = true,
       },
       sections = {
-        lualine_a = { { 'mode', icon = '', separator = { left = '', right = '' }, right_padding = 2 } },
+        lualine_a = { { 'mode', icon = '' } },
         lualine_b = {
           {
             'filename',
@@ -24,8 +24,8 @@ return {
           'diff',
         },
         lualine_x = { { 'diagnostics', sources = { 'nvim_diagnostic' } }, 'filetype' },
-        lualine_y = { 'progress' },
-        lualine_z = { { 'location', separator = { left = '', right = '' }, right_padding = 2 } },
+        lualine_y = {},
+        lualine_z = {},
       },
       inactive_sections = {
         lualine_a = {},
