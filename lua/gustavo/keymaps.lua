@@ -29,6 +29,18 @@ key('n', '<leader>ef', function()
   end
 end, { desc = 'Focus explorer' })
 
+-- bufferline shortcuts
+key('n', '<leader>bp', '<Cmd>BufferLineTogglePin<CR>', { desc = 'Toggle Pin' })
+key('n', '<leader>bP', '<Cmd>BufferLineGroupClose ungrouped<CR>', { desc = 'Delete Non-Pinned Buffers' })
+key('n', '<leader>br', '<Cmd>BufferLineCloseRight<CR>', { desc = 'Delete Buffers to the Right' })
+key('n', '<leader>bl', '<Cmd>BufferLineCloseLeft<CR>', { desc = 'Delete Buffers to the Left' })
+key('n', '<S-h>', '<Cmd>BufferLineCyclePrev<CR>', { desc = 'Prev Buffer' })
+key('n', '<S-l>', '<Cmd>BufferLineCycleNext<CR>', { desc = 'Next Buffer' })
+key('n', '[b', '<Cmd>BufferLineCyclePrev<CR>', { desc = 'Prev Buffer' })
+key('n', ']b', '<Cmd>BufferLineCycleNext<CR>', { desc = 'Next Buffer' })
+key('n', '[B', '<Cmd>BufferLineMovePrev<CR>', { desc = 'Move buffer prev' })
+key('n', ']B', '<Cmd>BufferLineMoveNext<CR>', { desc = 'Move buffer next' })
+
 -- Utilities
 key('n', '<leader>u/', vim.cmd.nohlsearch, { desc = 'Clear highlight' })
 key('n', '<leader>uc', vim.cmd.CommentToggle, { desc = 'Toggle comment' })

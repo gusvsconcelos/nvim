@@ -12,6 +12,7 @@ return {
       },
     })
     require('which-key').add({
+      { '<leader>b', group = 'Bufferline' },
       { '<leader>d', group = 'Diagnostics' },
       { '<leader>e', group = 'Explorer' },
       { '<leader>h', group = 'Templates' },
@@ -24,7 +25,6 @@ return {
       { '[d', desc = 'Next diagnostic' },
       { ']d', desc = 'Previous diagnostic' },
       { 'gd', desc = 'Go to definition' },
-      { '<leader>?', function() require('which-key').show({ global = false }) end, desc = 'Buffer keymaps' },
     })
   end,
 }
