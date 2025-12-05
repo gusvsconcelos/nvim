@@ -9,8 +9,8 @@ return {
         sidebars = 'transparent',
         floats = 'transparent',
       },
-      lualine_bold = true,
       on_colors = function(colors) colors.bg_statusline = colors.none end,
     },
   },
+  { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
 }

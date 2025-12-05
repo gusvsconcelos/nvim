@@ -12,14 +12,20 @@ return {
       },
       sections = {
         lualine_a = { { 'mode', icon = '', separator = { left = '', right = '' }, right_padding = 2 } },
-        lualine_b = {},
+        lualine_b = {
+          {
+            'filename',
+            path = 0,
+            symbols = { modified = '●', readonly = '󰷊' },
+          },
+        },
         lualine_c = {
-          'branch',
+          { 'branch', icon = '' },
           'diff',
         },
-        lualine_x = { { 'diagnostics', sources = { 'nvim_diagnostic' } } },
-        lualine_y = {},
-        lualine_z = {},
+        lualine_x = { { 'diagnostics', sources = { 'nvim_diagnostic' } }, 'filetype' },
+        lualine_y = { 'progress' },
+        lualine_z = { { 'location', separator = { left = '', right = '' }, right_padding = 2 } },
       },
       inactive_sections = {
         lualine_a = {},

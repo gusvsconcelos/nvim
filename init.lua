@@ -1,1 +1,1 @@
-require('gustavo')
+require('gus')
