@@ -8,6 +8,9 @@ return {
         separator_style = {
           '',
         },
+        indicator = {
+          icon = '┃',
+        },
         hover = {
           enabled = true,
           delay = 0,

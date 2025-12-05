@@ -7,20 +7,17 @@ return {
         icons_enabled = true,
         theme = 'auto',
         component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
         globalstatus = true,
       },
       sections = {
-        lualine_a = { { 'mode', icon = '' } },
-        lualine_b = {
-          {
-            'filename',
-            path = 0,
-            symbols = { modified = '●', readonly = '󰷊', unnamed = '󰇘', newfile = '󱪝' },
-          },
+        lualine_a = { { 'mode', icon = '', separator = { left = '', right = '' }, right_padding = 2 } },
+        lualine_b = {},
+        lualine_c = {
+          'branch',
+          'diff',
         },
-        lualine_c = { 'branch', 'diff' },
-        lualine_x = { { 'diagnostics', sources = { 'nvim_diagnostic' } }, 'filetype' },
+        lualine_x = { { 'diagnostics', sources = { 'nvim_diagnostic' } } },
         lualine_y = {},
         lualine_z = {},
       },
