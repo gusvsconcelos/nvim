@@ -84,7 +84,7 @@ key('n', '<leader>wx', '<cmd>close<CR>', { desc = 'Close split' })
 
 -- LSP
 key('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
-key('n', 'K', vim.lsp.buf.hover, { desc = 'Hover info' })
+key('n', 'K', function() vim.lsp.buf.hover({ max_width = 90 }) end, { desc = 'Hover info' })
 key('n', '[d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
 key('n', ']d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
 key('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'Diagnostic float' })
