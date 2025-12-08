@@ -2,7 +2,6 @@ vim.g.mapleader = ' '
 vim.opt.clipboard = 'unnamedplus'
 
 -- UI
-vim.opt.winborder = 'rounded'
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
@@ -14,7 +13,6 @@ vim.opt.scrolloff = 10
 vim.opt.wrap = false
 vim.opt.showmode = false
 vim.opt.ruler = false
--- vim.opt.laststatus = 0
 vim.opt.mousemoveevent = true
 
 -- Search

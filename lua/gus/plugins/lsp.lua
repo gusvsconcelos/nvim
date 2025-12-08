@@ -25,14 +25,21 @@ return {
     })
     require('mason-lspconfig').setup({
       ensure_installed = {
+        -- LSP
         'lua_ls',
-        'eslint',
         'ts_ls',
         'html',
         'cssls',
         'tailwindcss',
         'pyright',
         'intelephense',
+
+        -- Formatters
+        'autopep8',
+        'isort',
+        'php-cs-fixer',
+        'prettier',
+        'stylua',
       },
       automatic_installation = true,
     })
