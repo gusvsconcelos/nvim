@@ -33,13 +33,6 @@ return {
         'tailwindcss',
         'pyright',
         'intelephense',
-
-        -- Formatters
-        'autopep8',
-        'isort',
-        'php-cs-fixer',
-        'prettier',
-        'stylua',
       },
       automatic_installation = true,
     })
