@@ -14,6 +14,7 @@ vim.opt.wrap = false
 vim.opt.showmode = false
 vim.opt.ruler = false
 vim.opt.mousemoveevent = true
+vim.opt.cmdheight = 0
 
 -- Search
 vim.opt.hlsearch = false
